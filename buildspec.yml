@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+  pre_build:
+    commands:
+      - echo Installing backend dependencies...
+      - cd app-tier
+      - npm install
+  build:
+    commands:
+      - echo Preparing app artifacts...
+      - cd ..
+      - chmod +x scripts/*.sh
+  post_build:
+    commands:
+      - echo Build completed.
+
+artifacts:
+  files:
+    - app-tier/**
+    - scripts/**
+    - appspec.yml
+  discard-paths: no
