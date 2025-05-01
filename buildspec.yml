@@ -20,7 +20,5 @@ phases:
 
 artifacts:
   files:
-    - app-tier/**
-    - scripts/**
-    - appspec.yml
+    - '**/*'
   discard-paths: no
